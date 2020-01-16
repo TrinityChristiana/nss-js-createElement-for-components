@@ -1,5 +1,7 @@
 // In your JavaScript, use querySelector() to obtain a reference to that article DOM element.
-const article = document.querySelector("#messages");
+
+
+const fragment = document.createDocumentFragment()
 
 // Create five (5) section components, each with a class of message, and with the content of your choosing.
 const textArray = ["Random text here", "More random text", "Even more random text", "Look, more random text", "Last random words"];
@@ -17,7 +19,9 @@ const createSections = (textArray) => {
 const sectionArray = createSections(textArray);
 
 sectionArray.forEach(element => {
-    article.appendChild(element)
+    fragment.appendChild(element)
 });
+
+const article = document.querySelector("#messages").appendChild(fragment);
 
 console.log(article);
